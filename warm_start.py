@@ -3,7 +3,6 @@
 
 import tensorflow as tf
 import torch 
-import random
 from music21 import note, chord, instrument, stream
 from torch_models import *
 
