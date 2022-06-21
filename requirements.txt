@@ -7,4 +7,3 @@ pandas
 pickle-mixin
 scipy
 pretty_midi
-io
