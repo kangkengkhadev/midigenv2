@@ -1,8 +1,5 @@
 tensorflow
-torch
+torch 
 music21
 torch_models
-numpy
-pandas
-pickle-mixin
-scipy
+pickle
