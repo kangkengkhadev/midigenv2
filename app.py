@@ -26,14 +26,14 @@ if app_mode == "BiThreefold":
     with st.spinner('Wait for it...'):
         main("BiLSTM", prediction_output)
     st.success("generrated midi with BiThreefold success")
-    # midi_data = pretty_midi.PrettyMIDI('output/warm_start_BiLSTM.mid')
-    # audio_data = midi_data.fluidsynth()
-    # audio_data = np.int16(
-    #         audio_data / np.max(np.abs(audio_data)) * 32767 * 0.9
-    #     )
-    # virtualfile = io.BytesIO()
-    # wavfile.write(virtualfile, 44100, audio_data)
-    # st.audio(virtualfile)
+    midi_data = pretty_midi.PrettyMIDI('output/warm_start_BiLSTM.mid')
+    audio_data = midi_data.fluidsynth()
+    audio_data = np.int16(
+            audio_data / np.max(np.abs(audio_data)) * 32767 * 0.9
+        )
+    virtualfile = io.BytesIO()
+    wavfile.write(virtualfile, 44100, audio_data)
+    st.audio(virtualfile)
     st.download_button(
     label="DOWNLOAD MIDI!",
     data="trees",
