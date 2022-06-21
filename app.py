@@ -1,8 +1,5 @@
 from warm_start import main
 import streamlit as st
-import pretty_midi
-import numpy as np
-from scipy.io import wavfile
 
 prediction_output = main("TeacherForcing")
 st.title("Anime music generator with neural network")
