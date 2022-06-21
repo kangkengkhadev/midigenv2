@@ -1,6 +1,5 @@
 tensorflow
 torch 
-random
 music21
 torch_models
 numpy 
