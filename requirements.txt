@@ -1,9 +1,9 @@
 tensorflow
-torch 
+torch
 music21
 torch_models
-numpy 
-pandas 
+numpy
+pandas
 pickle
 scipy
 pretty_midi
