@@ -1,17 +1,17 @@
 ### use teacher forcing model to warm-start the window sliding model
 
 
+### use teacher forcing model to warm-start the window sliding model
+
+
 import tensorflow as tf
 import torch 
-import random
 from music21 import note, chord, instrument, stream
 from torch_models import *
 import pickle
 
 #device = "cuda" if torch.cuda.is_available() else "cpu"
 device = "cpu"
-
-
 
 MODEL_META  = {
     "Tutorial" : {
@@ -135,7 +135,7 @@ def main(model_name, pattern=None):
                 int_to_note = pickle.load(f)
 
             model = model_config["model"]
-            model.load_state_dict(torch.load(model_config["state_dict"]))
+            model.load_state_dict(torch.load(model_config["state_dict"],map_location='cpu'))
             model = model.to(device)
             model.eval()
 
@@ -160,7 +160,7 @@ def main(model_name, pattern=None):
                 int_to_note = pickle.load(f)
             
             model = model_config["model"]
-            model.load_state_dict(torch.load(model_config["state_dict"]))
+            model.load_state_dict(torch.load(model_config["state_dict"],map_location='cpu'))
 
             model = model.to(device)
 
@@ -185,5 +185,8 @@ if __name__ == "__main__":
 
     prediction_output = main("TeacherForcing")
     main("BiLSTM", prediction_output)
+
+    
+
 
     
