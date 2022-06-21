@@ -5,9 +5,6 @@ import tensorflow as tf
 import torch 
 from music21 import note, chord, instrument, stream
 from torch_models import *
-
-import numpy as np
-import pandas as pd
 import pickle
 
 #device = "cuda" if torch.cuda.is_available() else "cpu"
